@@ -15,7 +15,7 @@ import pygame, sys
 import random
 
 from pygame.locals import*
-
+from sounds import*
 
 ##### FUNDAMENTAL INITIALISATIONS 
 pygame.init()
@@ -62,21 +62,6 @@ img_launch = pygame.image.load('IMAGES\\launch_screen.png')
 img_launch = pygame.transform.scale(img_launch,(int(s_screen),int(s_screen)))
 img_menu = pygame.image.load('IMAGES\\bg2.png')
 img_menu = pygame.transform.scale(img_menu, (int(s_screen),int(s_screen)))
-
-### SOUNDS
-VOL_MUSIC = 0.6
-VOL_EFFECT= 0.6
-
-snake_grow = pygame.mixer.Sound("SOUNDS\\grow_sound.wav")
-snake_grow.set_volume(VOL_EFFECT)
-snake_die = pygame.mixer.Sound("SOUNDS\\die_sound.wav")
-snake_die.set_volume(0.7)
-##compte = pygame.mixer.Sound('SOUNDS\\compte_a_rebours.wav')
-##compte.set_volume(VOL_EFFECT)
-
-sound_bg1 = "SOUNDS\\game_msc.mp3"
-pygame.mixer.music.load(sound_bg1)
-pygame.mixer.music.set_volume(VOL_MUSIC)
 
 
 ##### CLASSES
