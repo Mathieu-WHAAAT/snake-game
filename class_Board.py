@@ -2,6 +2,10 @@
   Board class file
 """
 
+s_board = s_screen*0.9
+nb_cases = 42
+case = s_board/nb_cases
+
 class Board():
     """ Cases du tableau """
     def __init__(self, s_board, nb_cases, size_case):
