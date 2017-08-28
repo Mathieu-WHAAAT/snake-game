@@ -16,6 +16,9 @@ import random
 
 from pygame.locals import*
 from sounds import*
+from class_Snake import*
+from class_Board import*
+from class_Apple import*
 
 ##### FUNDAMENTAL INITIALISATIONS 
 pygame.init()
