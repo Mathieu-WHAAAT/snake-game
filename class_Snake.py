@@ -40,6 +40,43 @@ class Snake():
 """
   Function associate
 """
+def update_serpents(list_serp, move):
+    """ Update the position of the snake """
+    for iSerp in range(len(list_serp)-1,0,-1):
+        x_pos, y_pos = list_serp[iSerp-1].get_pos()
+        list_serp[iSerp].new_pos(x_pos, y_pos)
+    list_serp[0].update(move)
+    return list_serp
 
+def update_cases_free(list_serp, Plat, nb_cases):
+    """ nothing interesting """
+    Plat.reset(nb_cases)
+    for iSerp in list_serp:
+        if iSerp != list_serp[0]:
+            x_pos, y_pos = iSerp.get_pos()
+            Plat.set_case(x_pos, y_pos)
+    return Plat
 
+def is_eating(pom, serp, Plateau, nb_cases):
+    """ Check if is eating. return True or False """
+    pos_pom = pom.get_pos()
+    pos_serp = serp.get_pos()
+    if pos_pom == pos_serp:
+        pom.set_pos(Plateau, nb_cases)
+        return True
+    else:
+        return False
+    
+def colision(serp, Plat, nb_cases):
+    """"""
+    pos = serp.get_pos()
+    list_pos_oqp = Plat.cases_oqp(nb_cases)
+    if pos in list_pos_oqp:
+        return True
+    else: 
+        return False
 
+def display_serpents(list_serp, case):
+    """ Display the snake on the screen """
+    for serpent in Serpents_list:
+            serpent.display(img_head, img_body, case)
