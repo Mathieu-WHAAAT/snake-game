@@ -20,6 +20,8 @@ from visual import*
 from class_Snake import*
 from class_Board import*
 from class_Apple import*
+from functions_update import*
+from functions_display import*
 
 ##### FUNDAMENTAL INITIALISATIONS 
 pygame.init()
@@ -31,41 +33,6 @@ s_screen = 700
 DISPLAYSURF = pygame.display.set_mode((s_screen, s_screen),0,32)
 pygame.display.set_caption('Snake Game')
 
-##### FUNCTIONS
-
-    
-### START SCREEN
-
-    
-### MENU
-
-
-
-
-
-
-
-
-
-
-
-        
-### GAME
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-################################################################################
 jeu = 1
 time_sec = 0.0
 
