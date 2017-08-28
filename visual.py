@@ -46,3 +46,41 @@ font_pause2 = pygame.font.Font('freesansbold.ttf', 15)
 text_end = 'GAME OVER'
 font_end = pygame.font.Font('freesansbold.ttf', 70)
 font_score = pygame.font.Font('freesansbold.ttf', 25)
+
+"""
+  Functions to display
+"""
+
+def compte_a_rebours():
+    """ Compte à rebours avant le jeu """
+    time_sec, chiffre = 1.5, 4
+    while chiffre>0:
+        ### INPUTS
+        for event in pygame.event.get():
+            if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
+                pygame.quit()
+                sys.exit()
+        ### Update
+        if time_sec >= 1.25:
+            text_chiffre = str(chiffre-1)
+            font_chiffre = pygame.font.Font('freesansbold.ttf', int(1/(chiffre)*s_screen))
+            chiffre -= 1
+            time_sec = 0.0
+        surf_chiffre = font_chiffre.render(text_chiffre, True, GREEN)
+        rect_chiffre = surf_chiffre.get_rect()
+        rect_chiffre.center = (s_screen//2, s_screen//2)
+        time_sec += 1/FPS
+        ### Display
+        DISPLAYSURF.fill(BLACK)
+        if chiffre > 0:
+            DISPLAYSURF.blit(surf_chiffre, rect_chiffre)
+        pygame.display.update()
+        fps_Clock.tick(FPS)
+        
+def display_score(score, font):
+    """ display the score """
+    text = 'Score: '+ str(score)
+    surf = font.render(text, True, VERTP)
+    rect = surf.get_rect()
+    rect.topleft = (10, 10)
+    DISPLAYSURF.blit(surf, rect)
