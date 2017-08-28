@@ -62,7 +62,16 @@ class Board():
   Functions associate
 """
 
-
+def display_board(Plat):
+    """ Display the grill on the screen """
+    DISPLAYSURF.fill(BLACK)
+    board = Plat.get_cases()
+    rect = Plat.get_board()
+    pygame.draw.rect(DISPLAYSURF, WHITE, rect)
+    for case in board:
+        for listes in case:
+            pygame.draw.rect(DISPLAYSURF, WHITE, listes)
+            pygame.draw.rect(DISPLAYSURF, GRIS, listes, 1)
     
         
 
