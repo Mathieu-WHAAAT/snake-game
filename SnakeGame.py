@@ -19,7 +19,6 @@ from sounds import*
 
 ##### FUNDAMENTAL INITIALISATIONS 
 pygame.init()
-pygame.mixer.init()
 
 FPS = fps_snake = 60
 fps_Clock = pygame.time.Clock()
@@ -481,59 +480,6 @@ def display_score(score, font):
     rect.topleft = (10, 10)
     DISPLAYSURF.blit(surf, rect)
     
-
-### SOUNDS
-def bg_music_start():
-    """ Play the background music """
-    pygame.mixer.music.play(-1, 0.0)
-
-def bg_music_pause():
-    """ Pause the bg_music """
-    pygame.mixer.music.pause()
-
-def bg_music_unpause():
-    """ Unpause the bg_music """
-    pygame.mixer.music.unpause()
-
-def change_bg_son(bg, vol):
-    """ """
-    pygame.mixer.music.stop()
-    pygame.mixer.music.load(bg)
-    pygame.mixer.music.play(-1, 0.0)
-    pygame.mixer.music.set_volume(vol)
-
-def play_sound(sound):
-    """ Play the sound given in param """
-    sound.play()
-
-def low_vol(choice, vol):
-    """ Low the volume of the type choosen """
-    if vol > 0.0: 
-        vol -= 0.05
-    else: 
-        vol = 0.0
-    vol = round(vol*100)/100
-    if choice == 'music':
-        pygame.mixer.music.set_volume(vol)
-    elif choice == 'effect':
-        snake_grow.set_volume(vol)
-##        compte.set_volume(vol)
-    return vol
-
-def up_vol(choice, vol):
-    """ Low the volume of the type choosen """
-    if vol < 1.0:
-        vol += 0.05
-    else:
-        vol = 1.0
-    vol = round(vol*100)/100
-    if choice == 'music':
-        pygame.mixer.music.set_volume(vol)
-    elif choice == 'effect':
-        snake_grow.set_volume(vol)
-##        compte.set_volume(vol)
-    return vol
-        
 ################################################################################
 jeu = 1
 time_sec = 0.0
