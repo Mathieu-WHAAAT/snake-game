@@ -1,5 +1,5 @@
 """
-Project Title: SnakeGame TM
+Project Title: SnakeGame 
 
 Description:
     The old Snake Game recreated.
