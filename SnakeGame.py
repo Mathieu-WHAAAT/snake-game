@@ -32,9 +32,7 @@ s_screen = 700
 DISPLAYSURF = pygame.display.set_mode((s_screen, s_screen),0,32)
 pygame.display.set_caption('Snake Game')
 
-s_board = s_screen*0.9
-nb_cases = 42
-case = s_board/nb_cases
+
 
 
 
