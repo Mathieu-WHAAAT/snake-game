@@ -1,5 +1,6 @@
-# StarGame Inc. -- snake-game
 ---
+# StarGame Inc. -- snake-game
+
 ## Author:
 - Mathieu Dario
 
