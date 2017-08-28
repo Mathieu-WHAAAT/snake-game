@@ -27,23 +27,9 @@ pygame.init()
 FPS = fps_snake = 60
 fps_Clock = pygame.time.Clock()
 
-### SCREEN
 s_screen = 700
 DISPLAYSURF = pygame.display.set_mode((s_screen, s_screen),0,32)
 pygame.display.set_caption('Snake Game')
-
-
-
-
-
-
-
-
-##### CLASSES
-
-            
-
-
 
 ##### FUNCTIONS
 def initialise_all():
@@ -244,33 +230,7 @@ def display_controles(bg, size_s, font_menu, img_list):
     return rect_back
         
 ### GAME
-def compte_a_rebours(): ##son
-    """ Compte à rebours avant le jeu """
-##    play_sound(son)
-    time_sec = 1.5
-    chiffre = 4
-    while chiffre>0:
-        ### INPUTS
-        for event in pygame.event.get():
-            if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
-                pygame.quit()
-                sys.exit()
-        ### Update
-        if time_sec >= 1.25:
-            text_chiffre = str(chiffre-1)
-            font_chiffre = pygame.font.Font('freesansbold.ttf', int(1/(chiffre)*s_screen))
-            chiffre -= 1
-            time_sec = 0.0
-        surf_chiffre = font_chiffre.render(text_chiffre, True, GREEN)
-        rect_chiffre = surf_chiffre.get_rect()
-        rect_chiffre.center = (s_screen//2, s_screen//2)
-        time_sec += 1/FPS
-        ### Display
-        DISPLAYSURF.fill(BLACK)
-        if chiffre > 0:
-            DISPLAYSURF.blit(surf_chiffre, rect_chiffre)
-        pygame.display.update()
-        fps_Clock.tick(FPS)
+
 
 def display_board(Plat):
     """ Display the grill on the screen """
@@ -309,13 +269,6 @@ def display_buttons(text_pause, text_pause2, font_pause, font_pause2):
 
 
 
-def display_score(score, font):
-    """ display the score """
-    text = 'Score: '+ str(score)
-    surf = font.render(text, True, VERTP)
-    rect = surf.get_rect()
-    rect.topleft = (10, 10)
-    DISPLAYSURF.blit(surf, rect)
     
 ################################################################################
 jeu = 1
