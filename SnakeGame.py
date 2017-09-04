@@ -27,7 +27,7 @@ fps_Clock = pygame.time.Clock()
 ### SCREEN
 s_screen = 700
 DISPLAYSURF = pygame.display.set_mode((s_screen, s_screen),0,32)
-pygame.display.set_caption('Snake Game')
+pygame.display.set_caption('Snake Game by Mathieu Dario')
 
 s_board = s_screen*0.9
 nb_cases = 42
